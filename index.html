@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Preservation of History Foundation</title>
+    <link rel="icon" href="./fuji.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=STIX+Two+Text:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="body_container" id="blur">
+      <div class="nav">
+        <div class="nav_tabs">
+          <a class="nav_links" href="#home">Home</a>
+          <a class="nav_links" href="#about">About</a>
+          <a class="nav_links" href="#gallery">Gallery</a>
+          <a class="nav_links" href="#contact">Contact</a>
+          <a
+            class="nav_links donate_btn"
+            href="https://rzp.io/l/hJYvcxQhk"
+            target="_blank"
+            >Donate
+          </a>
+        </div>
+      </div>
+
+      <div class="tabs home" id="home">
+        <div class="text_box">
+          <div class="mid_text_lg">The Preservation of History Foundation</div>
+
+          <div class="mid_text">
+            We help in providing funds and necessary resources to the museums
+            and archeological sites around the world in order to preserve the
+            History left to us by our ancestors.
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs about" id="about">
+        <div class="text_box about_box">
+          <div class="mid_text_lg about_h1">About Us</div>
+          <div class="mid_text about_text">
+            In the year 1978 Mr. Uddeshya Tiwari established The Preservation of
+            History Foundation after witnessing the dire condition of museums
+            and archeological sites around the world during his travells. Since
+            the establishment of this Foundation we have gained more than
+            2,000,000 supporters and we have helped over 30,000 Museums and
+            Archeological around the globe.
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs gallery" id="gallery">
+        <div class="slideshow_container">
+          <div class="slides fade">
+            <img src="./images/slide-1.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+          <div class="slides fade">
+            <img src="./images/slide-2.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+          <div class="slides fade">
+            <img src="./images/slide-3.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+          <div class="slides fade">
+            <img src="./images/slide-4.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+          <div class="slides fade">
+            <img src="./images/slide-5.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+          <div class="slides fade">
+            <img src="./images/slide-6.jpg" alt="slide1" />
+            <div class="caption_text"></div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+      </div>
+
+      <div class="tabs contact" id="contact">
+        <div class="contact_info">
+          <div class="mid_text_lg">Contact</div>
+        </div>
+
+        <div class="contact_box">
+          <form
+            name="contact"
+            class="contact_form"
+            action="POST"
+            enctype="text/plain"
+            data-netlify="true"
+          >
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name" /><br />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="someone@example.com"
+            /><br />
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Write Something"
+            ></textarea>
+            <input type="submit" value="Submit" name="" id="submit_btn" />
+          </form>
+        </div>
+      </div>
+
+      <a class="floating_btn" href="https://rzp.io/l/hJYvcxQhk" target="_blank">
+        Donate
+      </a>
+
+      <div class="footer">
+        <span>Follow us on</span>
+        <div class="footer_links">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">Reddit</a>
+        </div>
+        <span>© 2021 The Preservation of History Foundation</span>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="content_box">
+        <div class="popup_close"></div>
+        <div class="img_box">
+          <img src="./images/charity.png" alt="charity_img" />
+        </div>
+        <div class="popup_content">
+          <h1>With the Support of over 2,000,000 donors</h1>
+          <br />
+          <span>
+            We have provided funds to 30000+ museums and archeological sites
+            around the world </span
+          ><br />
+          <span>
+            Be the part of change and Support us by
+            <a href="https://rzp.io/l/hJYvcxQhk">Donating.</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

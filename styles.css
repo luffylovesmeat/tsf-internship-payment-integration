@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  /* color: white; */
+}
+
+.body_container#blur.active {
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  filter: blur(12px);
+}
+
+/*! Navbar Style */
+
+.nav {
+  display: table;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  /* background-color: yellow; */
+  transition: background-color 0.5s ease;
+  z-index: 1000;
+}
+
+.nav_tabs {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 60px;
+}
+
+.nav_links {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  /* margin: 10px; */
+  padding: 15px 20px;
+  transition: 0.4s;
+}
+
+.scroll_active {
+  background-color: #fff;
+  box-shadow: 1 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scroll_active .nav_links {
+  color: #313131;
+  text-shadow: none;
+}
+
+/*! Tab Style */
+
+.tabs {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home {
+  background-image: url("images/mt_fuji.jpg");
+}
+.about {
+  background-image: url("images/sakura_shrine.jpg");
+}
+.contact {
+  background-image: url("images/sunset_shrine.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid_text_lg {
+  font-family: "STIX Two Text", serif;
+  color: white;
+  text-shadow: 1px 1px 15px rgb(88, 88, 88);
+  font-size: 40px;
+  line-height: 2;
+}
+
+.mid_text {
+  width: 40vw;
+  text-shadow: 2px 2px 9px #fff;
+}
+
+.text_box {
+  /* position: relative; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  justify-content: center;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  /* padding-left: 0; */
+}
+
+/*! About box Style */
+
+.about_text {
+  position: relative;
+  right: -47.4vw;
+  z-index: 1;
+}
+
+.about_h1,
+.about_text {
+  text-align: right;
+}
+
+/*! Popup Box Style */
+
+.popup {
+  position: fixed;
+  background-image: url("./images/tianshu-liu.jpg");
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.content_box {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.popup_close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/cancel.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  filter: invert(1);
+}
+
+.content_box .img_box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.content_box .img_box img {
+  position: relative;
+  max-width: 100px;
+  z-index: 1;
+}
+
+.content_box .img_box::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 60%;
+}
+
+.content_box .popup_content {
+  color: #fff;
+
+  height: 70%;
+  margin: 20px;
+  padding: 10px 10px 20px;
+}
+
+.content_box .popup_content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* body > *:not(#popup) {
+  background: #ffd83c;
+  filter: blur(3px);
+} */
+
+/*! Floating Button Style*/
+
+.floating_btn {
+  /* display: block; */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 1px 1px 5px #555555;
+  backdrop-filter: blur(5px);
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+  /* background-image: linear-gradient(#dad5ab, #fce3ce); */
+}
+
+/*! Gallery Style */
+
+.slideshow_container {
+  top: 10vh;
+  /* background-color: red; */
+  height: 80vh;
+  max-width: 80vw;
+  position: relative;
+  margin: auto;
+  border-radius: 2px;
+}
+
+.slides {
+  display: none;
+  /* overflow: hidden; */
+}
+
+.slides img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 2px 2px 0;
+  user-select: auto;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.caption_text {
+  color: #f2f2f2;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dots {
+  position: relative;
+  bottom: -108px;
+  left: 46.06%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active_dot,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*! Contact us Box Style */
+
+.contact_box {
+  width: 60vw;
+  height: 46vh;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 1px 1px 5px #555555;
+  backdrop-filter: blur(5px);
+}
+
+.contact_info {
+  position: relative;
+}
+.contact_info .mid_text_lg {
+  position: absolute;
+  top: -110px;
+  left: -60px;
+}
+
+form {
+  color: #fff;
+  margin: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+textarea {
+  height: 8vh;
+}
+
+input[type="submit"] {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-image: linear-gradient(#dad5ab, #fce3ce);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  /* border-radius: 2px; */
+  cursor: pointer;
+}
+
+/*! Footer Style */
+
+.footer {
+  background-color: #fff;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+.footer span {
+  padding: 17px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #000;
+  padding: 0px 15px;
+}
+
+/*! Hover Effects  */
+
+.nav_links:hover {
+  background-image: linear-gradient(#dad5ab, #fce3ce);
+}
+
+.floating_btn:hover {
+  background-color: rgba(128, 128, 128, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+/*! Custom Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
